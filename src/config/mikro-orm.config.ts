@@ -1,7 +1,7 @@
 import { RequestContext } from '@mikro-orm/core';
 import { MikroORM } from '@mikro-orm/core';
 import { defineConfig, PostgreSqlDriver } from '@mikro-orm/postgresql';
-import { FastifyWithZod } from '../utils/types';
+import { FastifyInstance } from 'fastify';
 import { Env } from './env';
 
 const MikroOrmConfig = defineConfig({
@@ -20,7 +20,7 @@ const MikroOrmConfig = defineConfig({
 
 export default MikroOrmConfig;
 
-export async function setupMikroOrm(fastify: FastifyWithZod) {
+export async function setupMikroOrm(fastify: FastifyInstance) {
   const orm = await MikroORM.init<PostgreSqlDriver>(MikroOrmConfig);
 
   fastify.addHook('onRequest', (req, reply, next) => {
