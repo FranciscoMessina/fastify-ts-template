@@ -13,6 +13,6 @@ To use follow this steps:
 - Make sure you have docker working in your machine.
 - Run the `docker-compose.yml` file.
 - Install the packages with your preferred package manager. `` `yarn install` or  `npm install` ``
-- Run migrations with `npx mikro-orm migrations:up`
+- Run migrations with `npx mikro-orm migration:up`
 - Start the server in dev mode with `npm run dev`
 - If there are no errors in the terminal, you now should be able to make a request to `localhost:${PORT}/health` and receive the following response `{ status: "OK" }`
